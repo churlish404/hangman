@@ -30,13 +30,21 @@ public class Main {
             // ask user to guess letter
             char guess = playerInput.getLetterGuess();
 
+            // check is not a number
+            System.out.println(letterGuesses.isNotANumber(guess));
+
             // if letter exists in guesses display a message "already guessed x"
-            if (letterGuesses.hasGuessed(guess)) {
+            if (letterGuesses.hasAlreadyGuessed(guess)) {
                 System.out.println("You already guessed this letter silly");
-            } else {
+            }
+            else if(letterGuesses.isNotANumber(guess)) {
+                System.out.println("You cannot guess a number");
+            }
+            else {
                 letterGuesses.addGuess(guess);
                 if (word.contains(String.valueOf(guess))) {
                     System.out.println("Nice one! that's in the word");
+                    letterGuesses.incrementCorrectGuess();
                     currentGameState.displayWord(word, letterGuesses);
                 } else {
                     System.out.println("Oh dear, that's not correct!");
@@ -45,14 +53,17 @@ public class Main {
                 }
 
                 playerLives.printLives();
-                String wordGuess = playerInput.getWordGuess();
-                if (Objects.equals(wordGuess, word)) {
-                    System.out.println(word + " is correct");
-                    break;
+                if(letterGuesses.getNumberOfCorrectGuesses() > 3) {
+                    String wordGuess = playerInput.getWordGuess();
+                    if (Objects.equals(wordGuess, word)) {
+                        System.out.println(word + " is correct");
+                        break;
+                    }
+                    else {
+                        currentGameState.displayIncorrectWordGuessMessage();
+                    }
                 }
-                else {
-                    currentGameState.displayIncorrectWordGuessMessage();
-                }
+
             }
         }
     }

@@ -2,7 +2,7 @@ public class CurrentGameState {
     public void displayWord(String word, LetterGuesses letterGuesses) {
         for (int i = 0; i < word.length(); i++) {
             char letter = word.charAt(i);
-            if (letterGuesses.hasGuessed(letter)) {
+            if (letterGuesses.hasAlreadyGuessed(letter)) {
                 System.out.print(letter + " ");
             } else {
                 System.out.print("_ ");
