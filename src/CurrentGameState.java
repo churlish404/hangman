@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-
 public class CurrentGameState {
-    public void displayWord(String word, ArrayList<Character> letterGuesses) {
+    public void displayWord(String word, LetterGuesses letterGuesses) {
         for (int i = 0; i < word.length(); i++) {
             char letter = word.charAt(i);
-            if (letterGuesses.contains(letter)) {
+            if (letterGuesses.hasGuessed(letter)) {
                 System.out.print(letter + " ");
             } else {
                 System.out.print("_ ");
@@ -12,4 +10,9 @@ public class CurrentGameState {
         }
         System.out.println();
     }
+
+    public void displayIncorrectWordGuessMessage () {
+        System.out.println("That's incorrect, try again");
+    }
+
 }

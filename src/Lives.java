@@ -11,7 +11,7 @@ public class Lives {
         }
     }
     public void printLives() {
-        System.out.println(livesRemaining);
+        System.out.println("You have " + livesRemaining + " lives remaining");
     }
     public boolean checkLoss() {
         return livesRemaining == 0;
