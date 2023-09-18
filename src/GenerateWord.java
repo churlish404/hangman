@@ -5,13 +5,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GenerateWord {
-    private final ArrayList<String> dictionary = new ArrayList<>();
+    private static final ArrayList<String> dictionary = new ArrayList<>();
 
-    public GenerateWord() throws FileNotFoundException {
-        populateDictionary();
+    static {
+        try {
+            populateDictionary();
+        } catch (FileNotFoundException error) {
+            System.err.println("Dictionary file not found: " + error.getMessage());
+        }
     }
 
-    private void populateDictionary() throws FileNotFoundException {
+    private static void populateDictionary() throws FileNotFoundException {
         Scanner fileReader = new Scanner(new File("src/Hangman_Dictionary.txt"));
         while (fileReader.hasNextLine()) {
             dictionary.add(fileReader.nextLine());
@@ -19,7 +23,7 @@ public class GenerateWord {
         fileReader.close();
     }
 
-    public String getWord() {
+    public static String getWord() {
         if (dictionary.isEmpty()) {
             throw new IllegalStateException("Dictionary is empty");
         }
@@ -28,3 +32,9 @@ public class GenerateWord {
         return dictionary.get(randomIndex);
     }
 }
+
+
+
+
+
+
