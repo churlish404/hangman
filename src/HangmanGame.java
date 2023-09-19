@@ -36,6 +36,7 @@ public class HangmanGame {
             // guess validation
             if (letterGuesses.hasAlreadyGuessed(guess)) {
                 PlayerMessages.alreadyGuessedMessage(guess);
+                lives.loseLife();
             }
             else if (letterGuesses.isNotANumber(guess)) {
                 PlayerMessages.notANumberMessage();

@@ -1,8 +1,8 @@
 public class PlayerMessages {
     public static void welcomeMessage() {
-        System.out.println("Hello, Welcome to Hangman...\n"
-                + "Guess a letter and then guess the word if you're feeling cocky\n"
-                + "You have 6 lives; if you guess an incorrect letter, you will lose a life \n"
+        System.out.println("Hello & Welcome to Hangman...\n"
+                + "Go ahead guess a letter, if you guess 4 letters you can try and guess the word\n"
+                + "if you guess an incorrect letter, you will pay for it with....one of your 6 lives \n"
                 + "Guess the word in time to spare the man from his demise! \n");
     }
     public static void guessAWordMessage() {
@@ -11,11 +11,11 @@ public class PlayerMessages {
 
     public static void outOfLivesMessage() {
         System.out.println("You have run out of lives \n"
-                + "Bye Bye stick man");
+                + "(stick man groans) 'Noooooooooooooooooooooo'");
     }
 
     public static void alreadyGuessedMessage(char letter) {
-        System.out.println("You already guessed the letter '" + letter + "'. Try another one.");
+        System.out.println("You already guessed the letter '" + letter + "'. For not paying attention you lose a life.");
     }
 
     public static void notANumberMessage() {
