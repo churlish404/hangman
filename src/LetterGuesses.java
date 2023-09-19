@@ -9,10 +9,8 @@ public class LetterGuesses {
     public int getNumberOfCorrectGuesses() {
         return numberOfCorrectGuesses;
     }
-    public int incrementCorrectGuess() {
+    public void incrementCorrectGuess() {
         numberOfCorrectGuesses++;
-        System.out.println(numberOfCorrectGuesses);
-        return numberOfCorrectGuesses;
     }
     public void addGuess(char guess) {
         letterGuesses.add(guess);

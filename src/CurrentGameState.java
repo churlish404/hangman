@@ -11,6 +11,7 @@ public class CurrentGameState {
         System.out.println();
     }
 
+
     public void displayIncorrectWordGuessMessage () {
         System.out.println("That's incorrect, try again");
     }

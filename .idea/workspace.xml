@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd5138ff-2923-457e-9624-07130509ee17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/HangmanGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentGameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LetterGuesses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LetterGuesses.java" afterDir="false" />
@@ -53,7 +54,10 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.Main">

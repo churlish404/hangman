@@ -4,7 +4,7 @@ public class PlayerInput {
     private final Scanner playerInput = new Scanner(System.in);
 
     public char getLetterGuess() {
-        System.out.println("guess a letter");
+        System.out.println("guess a letter:");
         char letterGuess = playerInput.next().charAt(0);
          // clear scanner to use for word guess
          playerInput.nextLine();
@@ -12,7 +12,6 @@ public class PlayerInput {
     }
     public String getWordGuess() {
         System.out.println("guess the word");
-        String wordGuess = playerInput.nextLine();
-        return wordGuess;
+        return playerInput.nextLine();
     }
 }
