@@ -44,7 +44,7 @@ public class HangmanGame {
             // valid guess
             else {
                 letterGuesses.addGuess(guess);
-                if (word.contains(String.valueOf(guess))) {
+                if (word.contains(String.valueOf(guess).toLowerCase())) {
                     PlayerMessages.correctLetterMessage(guess);
                     letterGuesses.incrementCorrectGuess();
                 } else {

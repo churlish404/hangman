@@ -13,7 +13,8 @@ public class LetterGuesses {
         numberOfCorrectGuesses++;
     }
     public void addGuess(char guess) {
-        letterGuesses.add(guess);
+        char lowercaseGuess = Character.toLowerCase(guess);
+        letterGuesses.add(lowercaseGuess);
     }
     public boolean hasAlreadyGuessed(char guess) {
         return letterGuesses.contains(guess);
