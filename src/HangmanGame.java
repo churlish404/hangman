@@ -1,17 +1,17 @@
 import java.util.Objects;
 
 public class HangmanGame {
-    public String word;
-    public LetterGuesses letterGuesses;
-    public Lives lives;
-    public CurrentGameState currentGameState;
-    public PlayerInput playerInput;
+    private String word;
+    private LetterGuesses letterGuesses;
+    private Lives lives;
+    private DisplayCurrentGameState currentGameState;
+    private PlayerInput playerInput;
 
-    public HangmanGame() {
-        this.word = GenerateWord.getWord();
+    public HangmanGame(GameDifficulty gameDifficulty) {
+        this.word = GenerateWord.getWord(gameDifficulty);
         this.letterGuesses = new LetterGuesses();
         this.lives = new Lives();
-        this.currentGameState = new CurrentGameState();
+        this.currentGameState = new DisplayCurrentGameState();
         this.playerInput = new PlayerInput();
     }
 

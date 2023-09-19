@@ -1,4 +1,4 @@
-public class CurrentGameState {
+public class DisplayCurrentGameState {
     public void displayWord(String word, LetterGuesses letterGuesses) {
         for (int i = 0; i < word.length(); i++) {
             char letter = word.charAt(i);

@@ -16,20 +16,30 @@ public class GenerateWord {
     }
 
     private static void populateDictionary() throws FileNotFoundException {
-        Scanner fileReader = new Scanner(new File("src/Hangman_Dictionary.txt"));
+        Scanner fileReader = new Scanner(new File("src/Hangman_Library.txt"));
         while (fileReader.hasNextLine()) {
             dictionary.add(fileReader.nextLine());
         }
         fileReader.close();
     }
+    private static boolean isWordValidForDifficulty(String word, GameDifficulty gameDifficulty) {
+        int wordLength = word.length();
+        return wordLength >= gameDifficulty.getMinWordLength() && wordLength <= gameDifficulty.getMaxWordLength();
+    }
 
-    public static String getWord() {
+    public static String getWord(GameDifficulty gameDifficulty) {
         if (dictionary.isEmpty()) {
             throw new IllegalStateException("Dictionary is empty");
         }
+        ArrayList<String> filteredWords = new ArrayList<>();
+        for(String word : dictionary) {
+            if(isWordValidForDifficulty(word, gameDifficulty)) {
+                filteredWords.add(word);
+            }
+        }
         Random rand = new Random();
-        int randomIndex = rand.nextInt(dictionary.size());
-        return dictionary.get(randomIndex);
+        int randomIndex = rand.nextInt(filteredWords.size());
+        return filteredWords.get(randomIndex);
     }
 }
 
