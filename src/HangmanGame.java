@@ -21,6 +21,7 @@ public class HangmanGame {
         while (true) {
             if (lives.checkLoss()) {
                PlayerMessages.outOfLivesMessage();
+               currentGameState.displayHangMan(lives.getLivesRemaining());
                 return false;
             }
 
@@ -29,6 +30,7 @@ public class HangmanGame {
             currentGameState.displayWord(word, letterGuesses);
             letterGuesses.displayGuesses();
             lives.printLives();
+            currentGameState.displayHangMan(lives.getLivesRemaining());
 
             char guess = playerInput.getLetterGuess();
             // guess validation
@@ -54,6 +56,7 @@ public class HangmanGame {
                     PlayerMessages.guessedAllLettersMessage(word);
                     return true;
                 }
+                // if correctly guessed three letters can try and guess word
                 if (letterGuesses.getNumberOfCorrectGuesses() > 3) {
                     PlayerMessages.guessAWordMessage();
                     currentGameState.displayWord(word, letterGuesses);
@@ -68,6 +71,7 @@ public class HangmanGame {
             }
         }
     }
+    // was unsure where else I could put this
     private boolean hasGuessedAllCorrectLetters() {
         for (char letter : word.toCharArray()) {
             if (!letterGuesses.hasAlreadyGuessed(letter)) {
