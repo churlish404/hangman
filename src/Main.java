@@ -10,7 +10,7 @@ public class Main {
             System.out.println("Congrats you won");
         }
         else {
-            System.out.println("Sorry you ");
+            System.out.println("Sorry you lost ");
         }
     }
 }

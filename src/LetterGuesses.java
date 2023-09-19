@@ -15,15 +15,12 @@ public class LetterGuesses {
     public void addGuess(char guess) {
         letterGuesses.add(guess);
     }
-
     public boolean hasAlreadyGuessed(char guess) {
         return letterGuesses.contains(guess);
     }
-
     public boolean isNotANumber(char guess) {
         return Character.isDigit(guess);
     }
-
     public void displayGuesses() {
         System.out.print("Guessed letters: ");
         for (char guess : letterGuesses) {

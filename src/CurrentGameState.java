@@ -11,9 +11,14 @@ public class CurrentGameState {
         System.out.println();
     }
 
-
-    public void displayIncorrectWordGuessMessage () {
-        System.out.println("That's incorrect, try again");
+    public void displayHangMan(int livesRemaining) {
+        switch(livesRemaining) {
+            case 1:
+                System.out.println("  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========");
+        }
     }
+
+
+
 
 }

@@ -16,58 +16,53 @@ public class HangmanGame {
     }
 
     public boolean play() {
-        System.out.println("Hello, Welcome to Hangman...\n"
-                + "Guess a letter and then guess the word if you're feeling cocky\n"
-                + "You have 6 lives if you guess an incorrect letter you will lose a life \n"
-                + "Guess the word in time to spare the man from his demise! \n");
+      PlayerMessages.welcomeMessage();
 
         while (true) {
             if (lives.checkLoss()) {
-                System.out.println("You have run out of lives \n"
-                        + "Bye Bye stick man");
-                return false; // Game over, player lost
+               PlayerMessages.outOfLivesMessage();
+                return false;
             }
 
             // print game state
             System.out.println(word);
             currentGameState.displayWord(word, letterGuesses);
-            letterGuesses.displayGuesses(); // Display guessed letters.
+            letterGuesses.displayGuesses();
+            lives.printLives();
 
-            // ask user to guess letter
             char guess = playerInput.getLetterGuess();
-
-            // if letter exists in guesses display a message "already guessed x"
+            // guess validation
             if (letterGuesses.hasAlreadyGuessed(guess)) {
-                System.out.println("You already guessed this letter silly");
+                PlayerMessages.alreadyGuessedMessage(guess);
             }
-            // check is not a number
             else if (letterGuesses.isNotANumber(guess)) {
-                System.out.println("You cannot guess a number");
+                PlayerMessages.notANumberMessage();
             }
-            // newly guessed letter
+
+            // valid guess
             else {
                 letterGuesses.addGuess(guess);
                 if (word.contains(String.valueOf(guess))) {
-                    System.out.println("Nice one! That's in the word");
+                    PlayerMessages.correctLetterMessage(guess);
                     letterGuesses.incrementCorrectGuess();
                 } else {
-                    System.out.println("Oh dear, that's not correct!");
+                    PlayerMessages.incorrectLetterMessage(guess);
                     currentGameState.displayWord(word, letterGuesses);
                     lives.loseLife();
                 }
                 if (hasGuessedAllCorrectLetters()) {
-                    System.out.println("Well done you guessed all the letters! " + word + " is correct");
+                    PlayerMessages.guessedAllLettersMessage(word);
                     return true;
                 }
-                lives.printLives();
                 if (letterGuesses.getNumberOfCorrectGuesses() > 3) {
-                    System.out.println("You've guessed some correct letters.. feeling lucky?");
+                    PlayerMessages.guessAWordMessage();
+                    currentGameState.displayWord(word, letterGuesses);
                     String wordGuess = playerInput.getWordGuess();
                     if (Objects.equals(wordGuess, word)) {
-                        System.out.println("Well done! " + word + " is correct");
+                        PlayerMessages.correctWordGuessMessage(word);
                         return true;
                     } else {
-                        currentGameState.displayIncorrectWordGuessMessage();
+                        PlayerMessages.incorrectWordGuessMessage();
                     }
                 }
             }
