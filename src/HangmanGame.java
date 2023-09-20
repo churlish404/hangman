@@ -57,7 +57,7 @@ public class HangmanGame {
                     PlayerMessages.guessedAllLettersMessage(word);
                     return true;
                 }
-                // if correctly guessed three letters can try and guess word
+                // if correctly guessed four different letters can try and guess word
                 if (letterGuesses.getNumberOfCorrectGuesses() > 3) {
                     PlayerMessages.guessAWordMessage();
                     currentGameState.displayWord(word, letterGuesses);
@@ -72,7 +72,6 @@ public class HangmanGame {
             }
         }
     }
-    // was unsure where else I could put this
     private boolean hasGuessedAllCorrectLetters() {
         for (char letter : word.toCharArray()) {
             if (!letterGuesses.hasAlreadyGuessed(letter)) {

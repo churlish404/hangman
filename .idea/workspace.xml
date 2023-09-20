@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd5138ff-2923-457e-9624-07130509ee17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GameDifficulty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hangman_Library.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrentGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DisplayCurrentGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenerateWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenerateWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HangmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HangmanGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hangman_Dictionary.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
