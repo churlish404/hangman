@@ -26,7 +26,6 @@ public class HangmanGame {
             }
 
             // print game state
-            System.out.println(word);
             currentGameState.displayWord(word, letterGuesses);
             letterGuesses.displayGuesses();
             lives.printLives();
