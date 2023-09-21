@@ -21,5 +21,5 @@ to say whether they would like to play another game.
 This project has helped to solidify my understanding of OOP principles, particularly 
 polymorphism, abstraction and encapsulation. I have divided my project into classes,
 following the single responsibility principle. I have also tried to incorporate my 
-learning about enums to store constants abd related information.
+learning about enums to store constants and related information.
 
